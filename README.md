@@ -2,7 +2,11 @@
 
 ## Setup
 
-<!-- TODO: -->
+```bash
+conda create -n nl2fol-local python=3.8
+conda activate nl2fol-local
+pip install -r requirements.txt
+```
 
 ## Usage
 
