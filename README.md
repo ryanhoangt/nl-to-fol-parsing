@@ -15,3 +15,9 @@ pip install -r requirements.txt
 ## Metrics
 
 <!-- TODO: -->
+
+## Tests
+
+```bash
+python3 -m unittest tests/*.py
+```
