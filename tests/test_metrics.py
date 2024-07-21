@@ -4,11 +4,11 @@ from metrics import is_syntactically_valid
 class TestIsSyntacticallyValid(unittest.TestCase):
 
     def test_valid_formula(self):
-        formula = "A & B"
+        formula = "A(x) ∧ B(x)"
         self.assertTrue(is_syntactically_valid(formula))
 
     def test_invalid_formula(self):
-        formula = "A &"
+        formula = "A(x) ∧"
         self.assertFalse(is_syntactically_valid(formula))
 
     def test_empty_string(self):
@@ -16,11 +16,11 @@ class TestIsSyntacticallyValid(unittest.TestCase):
         self.assertFalse(is_syntactically_valid(formula))
 
     def test_special_characters(self):
-        formula = "A & B @"
+        formula = "A(x) ∧ B(x) @"
         self.assertFalse(is_syntactically_valid(formula))
 
     def test_nested_formula(self):
-        formula = "(A & B) | C"
+        formula = "(A(x) ∧ B(x)) ∨ C(x)"
         self.assertTrue(is_syntactically_valid(formula))
 
     def test_formula_with_quantifiers(self):
@@ -28,11 +28,11 @@ class TestIsSyntacticallyValid(unittest.TestCase):
         self.assertTrue(is_syntactically_valid(formula))
 
     def test_formula_with_negation(self):
-        formula = "¬(A ∨ B)"
+        formula = "¬(A(x) ∨ B(x))"
         self.assertTrue(is_syntactically_valid(formula))
 
     def test_formula_with_multiple_operators(self):
-        formula = "A ∧ B ∨ C → D"
+        formula = "A(x) ∧ B(x) ∨ C(x) → D(y)"
         self.assertTrue(is_syntactically_valid(formula))
 
     def test_fol_formulas(self):

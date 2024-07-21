@@ -15,9 +15,6 @@ sym_reg = re.compile(r'[^⊕∨∧→↔∀∃¬(),]+')
 cfg_template = """
 S -> F | Q F
 Q -> QUANT VAR | QUANT VAR Q
-F -> PRED | F BIN_OP F | '(' F ')'
-BIN_OP -> '&' | '|'
-QUANT -> '∀' | '∃'
 F -> '¬' '(' F ')' | '(' F ')' | F OP F | L
 OP -> '⊕' | '∨' | '∧' | '→' | '↔'
 L -> '¬' PRED '(' TERMS ')' | PRED '(' TERMS ')'
