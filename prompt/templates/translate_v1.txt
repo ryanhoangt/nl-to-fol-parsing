@@ -1,0 +1,26 @@
+Translate the following natural language (NL) statement to a first-order logic (FOL) rule.
+
+When there are pre-defined predicates, try to use them to form the premises, and only add new predicates if necessary.
+
+The output must be in JSON format and has the following 3 fields:
+* `existing_predicates`: array of existing predicates that can be used to form the premises, in camel case with no space, and number of variables it takes e.g., `CamelCase(x,y)`
+* `new_predicates`: array of new predicates, in camel case with no space, and number of variables it takes e.g., `CamelCase(x,y)`
+* `variables`: array of variables, in lower case with no space, e.g., `lowercase`
+* `premises`: array of premises constructed from the NL statement
+* `conclusion`: the translation of the conclusion of the NL, can be a question or a statement. If it is a yes/no question, translate to the one with 'yes' semantic meaning.
+
+Important notes:
+* Don't forget to also include predicates used in `conclusion` in either `existing_predicates` or `new_predicates`
+
+Please return only the JSON output, don't include any other text.
+
+{examples_str}
+
+
+NL:
+{nl_str}
+
+Existing predicates:
+{existing_predicates_str}
+
+FOL translation:

@@ -1,0 +1,69 @@
+--- Start of Example 1 ---
+NL:
+All people who regularly drink coffee are dependent on caffeine. People regularly drink coffee, or they don't want to be addicted to caffeine, or both. No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug. Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug. Rina is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.
+
+Existing predicates:
+None
+
+FOL translation:
+```
+{
+  "existing_predicates": [],
+  "new_predicates": [
+    "DrinkRegularly(x,y)",
+    "IsDependentOn(x,y)",
+    "DrinkRegularly(x,y)",
+    "WantToBeAddictedTo(x,y)",
+    "AwareThatDrug(x,y)",
+    "Student(x)"
+  ],
+  "variables": [
+    "coffee",
+    "caffeine",
+    "rina"
+  ],
+  "premises": [
+    "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))",
+    "∀x (DrinkRegularly(x, coffee) ∨ (¬WantToBeAddictedTo(x, caffeine)))",
+    "∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine)) ¬(Student(rina) ⊕ ¬AwareThatDrug(rina, caffeine)) ¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))"
+  ],
+  "conclusion": ""
+}
+```
+--- End of Example 1 ---
+
+--- Start of Example 2 ---
+NL:
+All people who regularly drink coffee are dependent on caffeine. People regularly drink coffee, or they don't want to be addicted to caffeine, or both. No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug. Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug. Rina is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.
+
+Existing predicates:
+- DrinkRegularly(x,y)
+- IsDependentOn(x,y)
+- WantToBeAddictedTo(x,y)
+
+FOL translation:
+```
+{
+  "existing_predicates": [
+    "DrinkRegularly(x,y)",
+    "IsDependentOn(x,y)",
+    "WantToBeAddictedTo(x,y)"
+  ],
+  "new_predicates": [
+    "AwareThatDrug(x,y)",
+    "Student(x)"
+  ],
+  "variables": [
+    "coffee",
+    "caffeine",
+    "rina"
+  ],
+  "premises": [
+    "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))",
+    "∀x (DrinkRegularly(x, coffee) ∨ (¬WantToBeAddictedTo(x, caffeine)))",
+    "∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine)) ¬(Student(rina) ⊕ ¬AwareThatDrug(rina, caffeine)) ¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))"
+  ],
+  "conclusion": ""
+}
+```
+--- End of Example 2 ---
