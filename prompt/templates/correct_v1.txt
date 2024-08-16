@@ -1,0 +1,9 @@
+There are some invalid premises:
+
+{invalid_premises_str}
+
+Please check, correct them and provide a new translation in the correct format (no further explanation needed). You can redefine the predicates if needed. Some tips:
+* In FOL logic, there are no mathematic operators like <, >, =, etc. Define predicates for them instead. For example, `Joe has age less than 30 years old` can be translated as `LessThan30YearsOld(joe)`, etc.
+* Always check for number of parentheses and ensure each open parenthesis should have a corresponding close parenthesis.
+* Nested predicates e.g., `P1(P2(x))` are invalid. Instead, you should define new variable and/or predicate to represent the natural language statement.
+* Please use `→` only, and do NOT use the backward version `←` for implication.
