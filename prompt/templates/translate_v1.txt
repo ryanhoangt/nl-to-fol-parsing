@@ -11,7 +11,7 @@ The output must be in JSON format and has the following 3 fields:
 
 Important notes:
 * Don't forget to also include predicates used in `conclusion` in either `existing_predicates` or `new_predicates`
-* In FOL logic, there are no operators like <, >, =, etc. Define predicates for them instead.
+* In FOL logic, there are no operators like <, >, =, ∑, +, -, *, /, etc. Define predicates for them instead.
 
 Please return only the JSON output, don't include any other text.
 
